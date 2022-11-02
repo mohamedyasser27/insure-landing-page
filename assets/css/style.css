@@ -1,0 +1,60 @@
+:root {
+  --Dark_Violet:#2d2640;
+--Grayish_Blue: #95a9c6;
+--Very_Dark_Violet: #2b272f;
+--Dark_Grayish_Violet: #837d87;
+--Very_LightGray: #fafafa;
+}
+
+
+@font-face {
+  font-family: "DM Serif Display";
+  src: url("/assets/fonts/DM_Serif_Display/DMSerifDisplay-Regular.ttf");
+  font-weight:400 ;
+  font-display: optional;
+
+}
+
+@font-face {
+  font-family: "Karla";
+  src: url("/assets/fonts/Karla/static/Karla-Regular.ttf");
+  font-weight: 400;
+  font-display: optional;
+
+}
+
+@font-face {
+  font-family: "DM Serif Display",'Dej_Vu Serif';
+  src: url("/assets/fonts/Karla/static/Karla-Bold.ttf");
+  font-weight: 700;
+  font-display: optional;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+body {
+  height: 100%;
+  font-size: 16px;
+
+}
+
+
+@media only screen and (min-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+}
