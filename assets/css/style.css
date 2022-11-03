@@ -1,18 +1,16 @@
 :root {
-  --Dark_Violet:#2d2640;
---Grayish_Blue: #95a9c6;
---Very_Dark_Violet: #2b272f;
---Dark_Grayish_Violet: #837d87;
---Very_LightGray: #fafafa;
+  --Dark_Violet: #2d2640;
+  --Grayish_Blue: #95a9c6;
+  --Very_Dark_Violet: #2b272f;
+  --Dark_Grayish_Violet: #837d87;
+  --Very_LightGray: #fafafa;
 }
-
 
 @font-face {
   font-family: "DM Serif Display";
   src: url("/assets/fonts/DM_Serif_Display/DMSerifDisplay-Regular.ttf");
-  font-weight:400 ;
+  font-weight: 400;
   font-display: optional;
-
 }
 
 @font-face {
@@ -20,11 +18,10 @@
   src: url("/assets/fonts/Karla/static/Karla-Regular.ttf");
   font-weight: 400;
   font-display: optional;
-
 }
 
 @font-face {
-  font-family: "DM Serif Display",'Dej_Vu Serif';
+  font-family: "DM Serif Display", "Dej_Vu Serif";
   src: url("/assets/fonts/Karla/static/Karla-Bold.ttf");
   font-weight: 700;
   font-display: optional;
@@ -49,12 +46,129 @@ html {
 body {
   height: 100%;
   font-size: 16px;
-
+  font-family: "Karla";
 }
 
+main {
+  width: 100%;
+  min-height: 100%;
+}
 
-@media only screen and (min-width: 600px) {
-  body {
-    background-color: lightblue;
+nav,
+section {
+  margin-bottom: 10px;
+}
+
+nav {
+  padding: 10px 0px;
+}
+
+.content {
+  width: 85%;
+  margin: 0 auto;
+}
+
+nav > .content {
+  display: flex;
+  align-items: center;
+}
+
+/*remove on mobile view*/
+.navItems {
+  display: none;
+}
+
+.sideMenuBG{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+width: 100%;
+max-height: 60%;
+}
+
+.sideMenu {
+  height: 85vh;
+  padding-top: 50px;
+  background-color: var(--Very_Dark_Violet);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.sideMenuBtn {
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--Very_LightGray);
+}
+
+.resetBtnStyle {
+  background-color: transparent;
+  border: none;
+}
+
+.openSideMenuBtn,
+.closeSideMenuBtn {
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.invisible {
+  display: none;
+}
+
+.viewPlanBtn {
+  width: 90%;
+  max-width: 400px;
+  border: 2px solid var(--Very_LightGray);
+  color: var(--Very_LightGray);
+  padding: 12px;
+}
+
+.viewPlanBtn:hover{
+  background-color: var(--Very_LightGray);
+  border-color: var(--Very_Dark_Violet);
+  color: var(--Very_Dark_Violet);
+}
+
+@media only screen and (min-width: 720px) {
+  .sideMenu,
+  .closeSideMenuBtn,
+  .openSideMenuBtn {
+    display: none;
+  }
+
+  .navItems li {
+    display: inline;
+    margin-left: 10px;
+  }
+
+  .navItems {
+    display: initial;
+    margin-left: auto;
+  }
+
+  .navBtn {
+    color: var(--Dark_Grayish_Violet);
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  .navBtn:hover {
+    color: var(--Very_Dark_Violet);
+  }
+
+  .viewPlanBtn {
+    width: initial;
+    border-color: var(--Very_Dark_Violet);
+    color: var(--Dark_Violet);
+    padding: 12px 40px;
+  }
+
+  .viewPlanBtn:hover {
+    background-color: var(--Very_Dark_Violet);
+    color: var(--Very_LightGray);
   }
 }
