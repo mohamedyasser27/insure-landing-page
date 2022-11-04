@@ -52,6 +52,8 @@ body {
 main {
   width: 100%;
   min-height: 100%;
+  /*relative to dropDown*/
+  position: relative;
 }
 
 hr {
@@ -103,7 +105,7 @@ nav > .content {
 }
 
 nav .viewPlanBtn {
-  border:2px solid var(--Very_Dark_Violet);
+  border: 2px solid var(--Very_Dark_Violet);
   color: var(--Dark_Violet);
 }
 
@@ -113,24 +115,26 @@ nav .viewPlanBtn:hover {
 }
 
 .dropDownMenu {
-  height: min(130vw, 70vh);
-  padding-top: 50px;
   background-color: var(--Very_Dark_Violet);
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
 
+  position: absolute;
+  width: 100%;
+  height: min(130vw, 70vh);
+
   transform-origin: 50% 0%;
-  transition: transform 200ms 0s linear ;
+  transition: opacity 230ms 0s linear,transform 230ms 0s linear;
 }
 
-.dropDownMenu.invisible{
+.dropDownMenu.invisible {
   transform-origin: 50% 0%;
+  /* height: 0; */
   transform: scaleY(0);
+  opacity: 0;
 }
-
 
 .dropDownBG {
   position: absolute;
@@ -143,6 +147,7 @@ nav .viewPlanBtn:hover {
 .dropDownBtn {
   font-weight: 700;
   color: var(--Very_LightGray);
+  transform: translateY(50px);
 }
 
 .openDropDownBtn,
@@ -150,7 +155,8 @@ nav .viewPlanBtn:hover {
   margin-left: auto;
 }
 
-.openDropDownBtn.invisible,.closeDropDownBtn.invisible{
+.openDropDownBtn.invisible,
+.closeDropDownBtn.invisible {
   display: none;
 }
 
