@@ -65,9 +65,9 @@ hr {
   text-transform: uppercase;
 }
 
-.invisible {
+/* .invisible {
   display: none !important;
-}
+} */
 
 nav {
   padding: 10px 0px;
@@ -121,7 +121,16 @@ nav .viewPlanBtn:hover {
   flex-direction: column;
   align-items: center;
   gap: 20px;
+
+  transform-origin: 50% 0%;
+  transition: transform 200ms 0s linear ;
 }
+
+.dropDownMenu.invisible{
+  transform-origin: 50% 0%;
+  transform: scaleY(0);
+}
+
 
 .dropDownBG {
   position: absolute;
@@ -139,6 +148,10 @@ nav .viewPlanBtn:hover {
 .openDropDownBtn,
 .closeDropDownBtn {
   margin-left: auto;
+}
+
+.openDropDownBtn.invisible,.closeDropDownBtn.invisible{
+  display: none;
 }
 
 .dropDownMenu .viewPlanBtn {
