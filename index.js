@@ -1,13 +1,13 @@
-let openSideMenuBtn = document.querySelector(".openSideMenuBtn");
-let closeSideMenuBtn = document.querySelector(".closeSideMenuBtn");
+let openDropDownBtn = document.querySelector(".openDropDownBtn");
+let closeDropDownBtn = document.querySelector(".closeDropDownBtn");
 
-let sideMenu = document.querySelector(".sideMenu");
+let dropDownMenu = document.querySelector(".dropDownMenu");
 
 let eventHandler = function () {
-    closeSideMenuBtn.classList.toggle("invisible");
-    openSideMenuBtn.classList.toggle("invisible");
-    sideMenu.classList.toggle("invisible");
+    closeDropDownBtn.classList.toggle("invisible");
+    openDropDownBtn.classList.toggle("invisible");
+    dropDownMenu.classList.toggle("invisible");
 }
-openSideMenuBtn.addEventListener("click", eventHandler);
+openDropDownBtn.addEventListener("click", eventHandler);
 
-closeSideMenuBtn.addEventListener("click", eventHandler);
+closeDropDownBtn.addEventListener("click", eventHandler);
