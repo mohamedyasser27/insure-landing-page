@@ -30,6 +30,7 @@
 html {
   box-sizing: border-box;
   height: 100%;
+  font-size: 16px;
 }
 *,
 *:before,
@@ -45,7 +46,6 @@ html {
 
 body {
   height: 100%;
-  font-size: 16px;
   font-family: "Karla";
 }
 
@@ -65,6 +65,7 @@ hr {
   background-color: transparent;
   border: none;
   text-transform: uppercase;
+  font-size: 1rem;
 }
 
 /* .invisible {
@@ -81,7 +82,7 @@ nav > .content {
 }
 
 .content {
-  width: 85%;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -107,6 +108,7 @@ nav > .content {
 nav .viewPlanBtn {
   border: 2px solid var(--Very_Dark_Violet);
   color: var(--Dark_Violet);
+  padding: 0.6em 1em;
 }
 
 nav .viewPlanBtn:hover {
@@ -126,7 +128,7 @@ nav .viewPlanBtn:hover {
   height: min(130vw, 70vh);
 
   transform-origin: 50% 0%;
-  transition: opacity 230ms 0s linear,transform 230ms 0s linear;
+  transition: opacity 230ms 0s linear, transform 230ms 0s linear;
 }
 
 .dropDownMenu.invisible {
@@ -163,6 +165,7 @@ nav .viewPlanBtn:hover {
 .dropDownMenu .viewPlanBtn {
   border: 2px solid var(--Very_LightGray);
   color: var(--Very_LightGray);
+  padding: 0.6em 3em;
 }
 
 .dropDownMenu .viewPlanBtn:hover {
@@ -173,48 +176,43 @@ nav .viewPlanBtn:hover {
 
 /*intro*/
 
-/* .intro {
+.intro {
   background-color: var(--Dark_Violet);
   color: var(--Very_LightGray);
 }
 
 .intro .content {
   display: grid;
+  width: 100%;
   grid-template-rows: 1fr 1fr;
 }
 
 .left {
-  text-align: center;
-  width: 80%;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  gap: 30px;
+  justify-content: center;
+
+  gap: 25px;
+  text-align: center;
+
+  /*relative to background patterns*/
+  position: relative;
 }
 
-.left .heading {
+.heading {
   font-family: "DM Serif Display";
-  font-size: calc(2.5rem + 2vw);
   line-height: 1.1;
+}
+.left .heading, .left .description {
+  width: 91%;
+}
+.left .heading {
+  font-size: clamp(3rem, 2.6rem + 2vw, 5rem);
 }
 
 .left .description {
-  font-size: calc(1rem + 0.2vw);
-}
-
-.introImageDesktop {
-  display: none;
-}
-
-.intro .viewPlanBtn {
-  border-color: var(--Very_LightGray);
-  color: var(--Very_LightGray);
-  max-width: 200px;
-  text-transform: uppercase;
-
-  margin-bottom: 30px;
+  font-size: clamp(1rem, 0.96rem + 0.2vw, 1.2rem);
 }
 
 .right {
@@ -224,18 +222,71 @@ nav .viewPlanBtn:hover {
 .introImageMobile {
   width: 100%;
   object-fit: contain;
-} */
+}
 
-@media only screen and (min-width: 720px) {
-  hr {
-    display: initial;
-    width: 200px;
-    border-color: white;
+.introImageDesktop {
+  display: none;
+  max-width: 100%;
+  margin-left: auto;
+  position: relative;
+  bottom: -100px;
+  object-fit: contain;
+}
+
+.intro .viewPlanBtn {
+  border: 2px solid var(--Very_LightGray);
+  color: var(--Very_LightGray);
+  padding: 0.6em 3em;
+}
+
+
+/*features*/
+
+.features .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  margin-top: 200px;
+}
+
+.featureList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  row-gap: 20px;
+  justify-items: center;
+}
+
+.features .content > .heading {
+  font-size: clamp(3rem, 2.6rem + 2vw, 5rem);
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  width: 70%;
+}
+
+.feature > .heading {
+  font-size: max(calc(0.4rem + 1vw), calc(1rem + 1vh));
+}
+
+.feature .description {
+  width: 100%;
+  text-align: center;
+  color: var(--Dark_Grayish_Violet);
+  width: 100;
+  font-size: clamp(1rem, 0.98rem + 0.1vw, 1.1rem);
+}
+
+@media only screen and (min-width: 750px) {
+  .content,
+  .intro .content {
+    width: 70%;
   }
 
-  .content {
-    margin: 0 auto;
-  }
   .dropDownMenu,
   .closeDropDownBtn,
   .openDropDownBtn {
@@ -248,7 +299,7 @@ nav .viewPlanBtn:hover {
 
   /*intro*/
 
-  /* .intro .content {
+  .intro .content {
     grid-template-rows: initial;
     grid-template-columns: 1fr 1fr;
   }
@@ -256,21 +307,11 @@ nav .viewPlanBtn:hover {
   .left {
     align-items: flex-start;
     text-align: initial;
-    width: 100%;
-  }
-
-  .left .heading,
-  .left .description {
-    margin: 0;
-  }
-  .left .description {
-    width: 80%;
   }
 
   .right {
     order: 1;
-
-    position: relative;
+    display: flex;
   }
 
   .introImageMobile {
@@ -279,8 +320,25 @@ nav .viewPlanBtn:hover {
 
   .introImageDesktop {
     display: initial;
-    position: relative;
-    bottom: -100px;
-    max-width: 100%;
-  } */
+  }
+
+  hr {
+    display: initial;
+    width: 100%;
+    max-width: 200px;
+    border-color: white;
+  }
+
+  .features > .content {
+    align-items: initial;
+  }
+
+  .feature {
+    align-items: flex-start;
+  width: initial;
+
+  }
+  .feature .description {
+    text-align: start;
+  }
 }
