@@ -144,15 +144,10 @@ nav .viewPlanBtn:hover {
   position: absolute;
   width: 100%;
   height: min(130vw, 70vh);
-
-  transform-origin: 50% 0%;
-  transition: opacity 230ms 0s linear, transform 230ms 0s linear;
+  z-index: 2;
 }
 
 .dropDownMenu.invisible {
-  transform-origin: 50% 0%;
-  /* height: 0; */
-  transform: scaleY(0);
   opacity: 0;
 }
 

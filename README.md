@@ -11,10 +11,6 @@ This is a solution to the [Insure landing page challenge on Frontend Mentor](htt
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -46,7 +42,5 @@ Users should be able to:
 
 ### What I learned
 
-- that position:absolute with no top/bottom/left/right sets where it was initially 
+- that position:absolute with no top/bottom/left/right sets where it was initially
 
-
-### Continued development
