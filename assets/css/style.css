@@ -83,16 +83,31 @@ nav > .content {
   display: flex;
   align-items: center;
 }
+.intro,
+.content {
+  z-index: 1;
+}
 
 .content {
   width: 90%;
   margin: 0 auto;
+  position: relative;
 }
 
 /*remove on mobile view*/
 .navItems {
   display: none;
   margin-left: auto;
+}
+
+.desktopBG {
+  display: none;
+}
+
+.desktopBG,
+.mobileBG {
+  z-index: 0;
+  position: absolute;
 }
 
 .navItems li {
@@ -179,9 +194,31 @@ nav .viewPlanBtn:hover {
 
 /*intro*/
 
+.leftIntroBG.desktopBG {
+  bottom: -300px;
+}
+
+.rightIntroBG.desktopBG {
+  right: 0px;
+  top: 0px;
+}
+
+.leftIntroBG.mobileBG {
+  left: 0px;
+  top: -5px;
+}
+
+.rightIntroBG.mobileBG {
+  right: 0px;
+  bottom: 0px;
+}
+
 .intro {
   background-color: var(--Dark_Violet);
   color: var(--Very_LightGray);
+
+  /*relative to BG patterns*/
+  position: relative;
 }
 
 .intro .content {
@@ -243,6 +280,12 @@ nav .viewPlanBtn:hover {
   padding: 0.6em 3em;
 }
 
+.intro .viewPlanBtn:hover,
+.howWeWork .howWeWorkBtn:hover {
+  background-color: var(--Very_LightGray);
+  color: var(--Dark_Violet);
+}
+
 /*features*/
 
 .features .content {
@@ -298,6 +341,10 @@ nav .viewPlanBtn:hover {
   margin: 100px auto;
   background-color: var(--Dark_Violet);
   padding: 40px;
+
+  /*relative to background patterns*/
+  position: relative;
+  overflow: hidden;
 }
 
 .howWeWork > .content {
@@ -321,9 +368,22 @@ nav .viewPlanBtn:hover {
   padding: 0.7em 2em;
 }
 
+.howWeWorkBG.desktopBG {
+  top: 0px;
+  right: 0px;
+}
+
+.howWeWorkBG.mobileBG {
+  top: 0px;
+  right: 0px;
+}
+
 footer {
   background-color: var(--Very_LightGray);
   padding: 60px 0px;
+
+  /*relative to BG patterns*/
+  position: relative;
 }
 
 footer .top {
@@ -362,6 +422,15 @@ footer .top {
   color: var(--Dark_Violet);
   font-size: 16px;
 }
+.footerBG.mobileBG {
+  top: 0px;
+  left: 0px;
+  width: 100%;
+}
+.footerBG.desktopBG {
+  top: 0px;
+  left: 0px;
+}
 
 @media only screen and (min-width: 750px) {
   .content,
@@ -372,6 +441,14 @@ footer .top {
   .dropDownMenu,
   .closeDropDownBtn,
   .openDropDownBtn {
+    display: none;
+  }
+
+  .desktopBG {
+    display: initial;
+  }
+
+  .mobileBG {
     display: none;
   }
 
