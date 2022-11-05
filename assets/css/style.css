@@ -49,15 +49,18 @@ body {
   font-family: "Karla";
 }
 
+hr {
+  height: 1px;
+  background-color: var(--Dark_Grayish_Violet);
+  border: none;
+  width: 100%;
+}
+
 main {
   width: 100%;
   min-height: 100%;
   /*relative to dropDown*/
   position: relative;
-}
-
-hr {
-  display: none;
 }
 
 .resetBtnStyle {
@@ -261,6 +264,14 @@ nav .viewPlanBtn:hover {
   font-size: clamp(3rem, 2.8rem + 1vw, 4rem);
   text-align: center;
 }
+.intro hr {
+  display: none;
+}
+
+.intro hr,
+.features hr {
+  max-width: 200px;
+}
 
 .feature {
   display: flex;
@@ -286,8 +297,7 @@ nav .viewPlanBtn:hover {
   width: 90%;
   margin: 100px auto;
   background-color: var(--Dark_Violet);
-    padding: 40px;
-
+  padding: 40px;
 }
 
 .howWeWork > .content {
@@ -301,7 +311,7 @@ nav .viewPlanBtn:hover {
 }
 
 .howWeWork .heading {
-  font-size: clamp(2.5rem, 2.4400rem + 0.3000vw, 2.8rem);
+  font-size: clamp(2.5rem, 2.44rem + 0.3vw, 2.8rem);
   text-align: center;
 }
 
@@ -309,6 +319,48 @@ nav .viewPlanBtn:hover {
   border: 2px solid var(--Very_LightGray);
   color: var(--Very_LightGray);
   padding: 0.7em 2em;
+}
+
+footer {
+  background-color: var(--Very_LightGray);
+  padding: 60px 0px;
+}
+
+footer .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.bottom {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.socialMediaIcons button {
+  margin-left: 10px;
+}
+
+.service {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-transform: uppercase;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.typeOfService {
+  color: var(--Dark_Grayish_Violet);
+  margin: 30px 0;
+}
+
+.serviceBtn {
+  color: var(--Dark_Violet);
+  font-size: 16px;
 }
 
 @media only screen and (min-width: 750px) {
@@ -334,6 +386,10 @@ nav .viewPlanBtn:hover {
     grid-template-columns: 1fr 1fr;
   }
 
+  .intro hr {
+    display: initial;
+  }
+
   .left {
     align-items: flex-start;
     text-align: initial;
@@ -352,12 +408,6 @@ nav .viewPlanBtn:hover {
     display: initial;
   }
 
-  hr {
-    display: initial;
-    width: 100%;
-    max-width: 200px;
-    border-color: white;
-  }
   .features .content > .heading {
     text-align: initial;
   }
@@ -375,8 +425,7 @@ nav .viewPlanBtn:hover {
   }
 
   .howWeWork {
-  width: 70%;
-
+    width: 70%;
   }
 
   .howWeWork > .content {
@@ -387,5 +436,13 @@ nav .viewPlanBtn:hover {
     max-width: 21ch;
     width: 100%;
     text-align: initial;
+  }
+
+  footer .top {
+    flex-direction: row;
+  }
+
+  .service {
+    align-items: flex-start;
   }
 }
